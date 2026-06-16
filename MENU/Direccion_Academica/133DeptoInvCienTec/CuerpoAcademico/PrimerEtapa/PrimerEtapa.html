@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirección Académica</title>
+  <link rel="stylesheet" href="/prueba/prueba/assets/css/global.css">
+  <link rel="stylesheet" href="PrimerEtapa.css">
+  <link rel="stylesheet" href="/prueba/prueba/assets/css/psicei-theme.css" />
+</head>
+<body>
+  <div class="left-panel">
+    <p>TESJo Delfin Externo</p>
+    <ion-icon name="exit-outline"></ion-icon>
+  </div>
+
+  <div class="periodo-btn no-click" id="periodoTexto"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="http://localhost/prueba/prueba/MENU/Direccion_General/pprincipal.html">Inicio</a></li>
+        <li><a href="/prueba/prueba/MENU/Direccion_Academica/133DeptoInvCienTec/133DeptoInvCienTec.html">Departamento de Investigación en Ciencia y Tecnología</a></li>
+        <li><a href="#" class="sub-item" onclick="mostrarPeriodo()">TESJo Delfin</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <button id="toggleSidebar" class="sidebar-toggle">⯈</button>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <div class="top-bar">
+      <img src="/prueba/prueba/MENU/images/enkabezado.png" alt="Encabezado" class="escudo">
+    </div>
+
+    <!-- Resumen de tablas -->
+    <div class="tablas-resumen">
+
+      <!-- Tablas resumen básicas -->
+      <div class="tablas-lado-a-lado">
+        <div class="tabla-wrapper">
+          <h3>Modalidad</h3>
+          <table id="tablaModalidad">
+            <thead>
+              <tr><th>Modalidad</th><th>Hombres</th><th>Mujeres</th><th>Total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Presencial</td><td></td><td></td><td></td></tr>
+              <tr><td>Virtual</td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tabla-wrapper">
+          <h3>Institución</h3>
+          <table id="tablaInstitucion">
+            <thead>
+              <tr><th>Tipo</th><th>Hombres</th><th>Mujeres</th><th>Total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Nacional</td><td></td><td></td><td></td></tr>
+              <tr><td>Internacional</td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tabla Lugar -->
+      <div class="tabla-wrapper">
+        <h3>Lugar de procedencia del estudiante</h3>
+        <table id="tablaLugar">
+          <thead>
+            <tr><th>Estancia</th><th>Hombres</th><th>Mujeres</th><th>Total</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nacional</td><td></td><td></td><td></td></tr>
+            <tr><td>Internacional</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tablas principales lado a lado -->
+      <div class="tablas-lado-a-lado">
+        <div class="scroll-table tabla-wrapper">
+          <h3>Tabla Principal</h3>
+          <table id="tablaTalleres">
+            <thead id="thead"></thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+
+        <div class="tabla-wrapper">
+          <h3>Detalle Categoría y Sexo por Programa Académico</h3>
+          <table id="tablaPrograma">
+            <thead>
+              <tr>
+                <th>Programa Académico</th>
+                <th>Estudiante presencial</th>
+                <th>Estudiante virtual</th>
+                <th>Docente presencial</th>
+                <th>Docente virtual</th>
+                <th>Hombres</th>
+                <th>Mujeres</th>
+                <th>Total de hombres y mujeres</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Ingeniería Electromecánica</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería Industrial</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería en Sistemas Computacionales</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería en Sistemas Computacionales (Extensión Aculco)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería Mecatrónica</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Arquitectura</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Contador Público</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Contador Público (Extensión Aculco)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería en Gestión Empresarial</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería en Materiales</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería en Animación Digital y Efectos Visuales</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Licenciatura en Turismo</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Licenciatura en Turismo (Extensión Aculco)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Ingeniería en Logística</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Maestría en Ingeniería</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Doctorado en Ingeniería</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+      <!-- Botones -->
+      <div class="form-group-buttons">
+        <button type="button" id="btnAgregarFila" class="submit-btn">Agregar Fila</button>
+        <button type="button" id="btnGuardarPDF" class="submit-btn">Descargar PDF</button>
+        <button type="button" id="btnGuardarExcel" class="submit-btn">Descargar Excel</button>
+        <button type="button" id="btnCancelar" class="submit-btn">Cancelar</button>
+      </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© Copyright 2025 TesJo - Todos los Derechos Reservados</p>
+    <img src="/prueba/prueba/MENU/images/pagg.png" alt="Logo pie de página">
+  </div>
+
+  <!-- Librerías externas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="PrimerEtapa.js"></script>
+  <script src="/prueba/prueba/assets/js/gemini-ai.js"></script>
+  <script src="/prueba/prueba/assets/js/psicei-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+/* Fuente Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos globales */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background: linear-gradient(to right, #B0B0B0);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Barra superior fija */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #00264D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.sidebar {
+    top: 35px;
+    position: relative;
+    /* Se desplaza junto al contenido */
+    background-color: #00264D;
+    width: 250px;
+    padding: 8px;
+    min-height: 300px;
+    border-radius: 0 10px 10px 0;
+    margin-top: -50px;
+    /* Mismo alto que .top-bar */
+    z-index: 500;
+    /* Menor que el encabezado */
+}
+
+
+/* Lista principal del sidebar sin sangría */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Elementos de lista alineados uniformemente */
+.sidebar ul li {
+    position: relative;
+    margin-bottom: 1.2rem;
+    padding-left: 0;
+}
+
+/* Enlaces del sidebar */
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    transition: background 0.5s ease;
+    padding: 10px 15px;
+}
+
+/* Efecto hover */
+.sidebar ul li a:hover {
+    background-color: #007bff;
+    border-radius: 8px;
+}
+
+/* Iconos del sidebar */
+.icono-inicio,
+.icono-biblioteca,
+.icono-centro {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    filter: invert(100%) brightness(200%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sidebar a:hover .icono-inicio,
+.sidebar a:hover .icono-biblioteca,
+.sidebar a:hover .icono-centro {
+    transform: scale(1.1);
+}
+
+/* Sub-item con estilo alineado */
+.sub-item {
+    font-size: 14px;
+    color: #cccccc;
+    font-weight: normal;
+    padding: 8px 15px;
+    margin-left: 0;
+}
+
+/* Logo lateral flotante */
+.logo {
+    position: absolute;
+    top: 500px;
+    right: 0;
+    transform: translateY(-50%);
+    height: 160px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.escudo {
+    width: 100%;
+    height: auto;
+}
+
+/* Contenedor general debajo del top-bar */
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    width: 90%;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Título del periodo */
+.titulo-periodo {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+/* Panel izquierdo */
+.left-panel {
+    top: 0px;
+    width: 100%;
+    background-color: #00264D;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 140px;
+    position: relative;
+    z-index: 999;
+    font-weight: normal;
+}
+
+.left-panel h1 {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.left-panel p {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+/* Panel derecho (formulario) */
+.right-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formularios */
+form {
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #BCBBBA;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+}
+
+a button {
+    text-decoration: none;
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #00264D;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 16px;
+    border-top: 2px solid #ffffff44;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 150px;
+}
+
+.footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botones para el container */
+.periodo-btn {
+    background-color: #004080;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.periodo-btn:hover {
+    background-color: #0066cc;
+}
+
+/* Formulario individual */
+.form-group input,
+.form-group select {
+    width: 50px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+
+.ciclo-escolar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 3cm auto;
+    padding: 10px 20px;
+    background-color: #00264D;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.sub-item {
+    font-size: 14px;
+    color: #cccccc;
+    font-weight: normal;
+    padding-left: 30px;
+    /* <-- agrega esto si no lo tienes */
+}
+
+
+.year-dropdown {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+
+.year-dropdown option {
+    color: black;
+    background-color: white;
+}
+
+#periodo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+    top: -250px;           /* Ajusta el valor para subirlo */
+}
+.titulo-periodo {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.icono-inicio,
+.icono-biblioteca,
+.icono-centro {
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+    filter: invert(100%) brightness(200%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sidebar a:hover .icono-inicio,
+.sidebar a:hover .icono-biblioteca .sidebar a:hover .icono-centro {
+    transform: scale(1.1);
+}
+
+
+.mensaje-importante {
+    background-color: #00264d;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 120px auto 80px auto;
+}
+
+
+
+
+/* Botones del formulario */
+.form-group-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #00264D;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    max-width: 150px;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+    color: #00264D;
+    border: 2px solid #00264D;
+}
+
+#grisScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 500px; 
+    max-width: 90%;
+    padding: 40px 20px;
+    border-radius: 12px;
+    z-index: 999;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c0bebe;
+}
+
+/* Contenedor ciclo escolar */
+.ciclo-escolar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1cm auto;
+    padding: 10px 20px;
+    background-color: #00264D;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: bold;
+    gap: 10px;
+    position: relative;
+    top: -250px; 
+}
+ 
+/* Sub-item en el menú */
+/* Eliminado bloque duplicado de .sub-item */
+
+/* Dropdowns */
+.year-dropdown {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+.year-dropdown option {
+    color: black;
+    background-color: white;
+}
+
+/* Sección de periodo */
+#periodo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+}
+
+/* Sangría específica para enlaces con clase "indentado" */
+.indentado {
+    padding-left: 50px !important;
+}
+
+.btn-deportivas {
+    background-color: #1e90ff;
+    /* color de fondo azul */
+    color: white;
+    /* color del texto */
+    padding: 5px 10px;
+    /* espacio interno */
+    border-radius: 4px;
+    /* bordes redondeados */
+    display: inline-block;
+    /* se comporta como botón */
+    text-decoration: none;
+    /* sin subrayado */
+}
+
+.btn-deportivas:hover {
+    background-color: #1565c0;
+    /* color al pasar el mouse */
+}
+        .toggle-sidebar-btn {
+            position: fixed;
+            top: 20px;
+            left: 250px;
+            z-index: 1001;
+            background-color: #004080;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: left 0.3s;
+            border-radius: 5px;
+        }
+
+        /* Ocultar sidebar */
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+
+        .sidebar {
+            transition: transform 0.3s ease;
+        }
+
+        /* Mover botón cuando sidebar está oculto */
+        .sidebar.hidden + .toggle-sidebar-btn {
+            left: 10px;
+        }

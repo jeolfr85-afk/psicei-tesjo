@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumnos en eventos académicos — SICEI | TESJo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/prueba/prueba/MENU/Direccion_Academica/131DeptoDesAcad/EvaluacionD/PrimerEtapa/PrimerEtapa.css?v=6">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    /* Estilos críticos inline — garantizan layout aunque falle el CSS externo */
+    html, body.ed-app { margin:0; padding:0; min-height:100vh; background:#edf0f5; font-family:'Poppins',sans-serif; color:#1e293b; display:flex; flex-direction:column; }
+    .ed-topbar { position:fixed; top:0; left:0; right:0; height:56px; background:#00264D; display:flex; align-items:center; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,.2); }
+    .ed-topbar__inner { width:100%; max-width:1160px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:12px; color:#fff; }
+    .ed-topbar__brand { font-weight:700; font-size:1rem; letter-spacing:.5px; }
+    .ed-topbar__module { font-size:.85rem; opacity:.85; }
+    .ed-body { display:flex; flex:1; margin-top:56px; min-height:calc(100vh - 56px); }
+    .ed-aside { width:248px; flex-shrink:0; background:#00264D; color:#fff; display:flex; flex-direction:column; }
+    .ed-aside__nav { display:flex; flex-direction:column; padding:10px 8px; gap:2px; flex:1; }
+    .ed-aside__link { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:8px; color:rgba(255,255,255,.85); text-decoration:none; font-size:.84rem; }
+    .ed-aside__link.is-active { background:rgba(255,255,255,.14); font-weight:600; }
+    .ed-main { flex:1; min-width:0; display:flex; flex-direction:column; background:#edf0f5; }
+    .ed-wrap { width:100%; max-width:1160px; margin:0 auto; padding:28px 32px 40px; }
+    .ed-kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px; }
+    .ed-kpi { background:#fff; border:1px solid #d8dee9; border-radius:10px; padding:18px; display:flex; align-items:center; gap:14px; box-shadow:0 2px 8px rgba(0,38,77,.08); }
+    .ed-btn { display:inline-flex; align-items:center; gap:6px; padding:9px 16px; border-radius:8px; font-weight:600; font-size:.84rem; cursor:pointer; border:none; font-family:inherit; }
+    .ed-btn--primary { background:#00264D; color:#fff; }
+    .ed-card { background:#fff; border:1px solid #d8dee9; border-radius:10px; box-shadow:0 2px 8px rgba(0,38,77,.08); margin-bottom:24px; overflow:hidden; }
+  </style>
+</head>
+
+<body class="ed-app">
+
+  <!-- Topbar compacto (sin banner gigante) -->
+  <header class="ed-topbar">
+    <div class="ed-topbar__inner">
+      <span class="ed-topbar__brand"><i class="bi bi-mortarboard-fill"></i> TESJo</span>
+      <span class="ed-topbar__module">SICEI — Alumnos en eventos académicos</span>
+    </div>
+  </header>
+
+  <!-- ═══ CUERPO: SIDEBAR + MAIN ═══ -->
+  <div class="ed-body" id="edBody">
+
+    <div class="ed-backdrop" id="edBackdrop" hidden aria-hidden="true"></div>
+
+    <!-- Sidebar -->
+    <aside class="ed-aside" id="edAside">
+      <div class="ed-aside__header">
+        <span class="ed-aside__title"><i class="bi bi-mortarboard-fill"></i> SICEI</span>
+        <button type="button" class="ed-aside__close" id="edAsideClose" aria-label="Cerrar menú">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <nav class="ed-aside__nav"></nav>
+      <div class="ed-aside__period" id="periodoTexto">
+        <i class="bi bi-calendar3"></i>
+        <div class="ed-period-picker">
+          <small>Semestre académico</small>
+          <div class="ed-period-picker__row">
+            <select id="selAnioPeriodo" aria-label="Año del semestre"></select>
+            <select id="selSemestrePeriodo" aria-label="Semestre">
+              <option value="A">Semestre A (Ago – Dic)</option>
+              <option value="B">Semestre B (Ene – Jun)</option>
+            </select>
+          </div>
+          <strong id="periodoValor">—</strong>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="ed-main">
+
+      <!-- Barra de navegación interna -->
+      <div class="ed-main-bar">
+        <button type="button" class="ed-nav-toggle" id="edNavToggle" aria-label="Alternar menú">
+          <i class="bi bi-list"></i>
+        </button>
+        <span class="ed-breadcrumb">Desarrollo Académico / Alumnos en eventos académicos</span>
+      </div>
+
+      <!-- Contenedor centrado -->
+      <div class="ed-wrap">
+
+        <!-- Encabezado -->
+        <header class="ed-header">
+          <div class="ed-header__info">
+            <span class="ed-tag">TESJo — Desarrollo Académico</span>
+            <h1>Alumnos en eventos académicos</h1>
+            <p>Registro de participación estudiantil en eventos académicos por programa.</p>
+          </div>
+          <div class="ed-header__actions">
+            <button type="button" class="ed-btn ed-btn--primary" id="btnAgregarFila">
+              <i class="bi bi-plus-lg"></i> Nuevo registro
+            </button>
+            <button type="button" class="ed-btn ed-btn--secondary" id="btnGuardar">
+              <i class="bi bi-save"></i> Guardar
+            </button>
+            <button type="button" class="ed-btn ed-btn--outline" id="btnGuardarPDF">
+              <i class="bi bi-file-earmark-pdf"></i> Descargar PDF
+            </button>
+            <button type="button" class="ed-btn ed-btn--outline" id="btnGuardarExcel">
+              <i class="bi bi-file-earmark-spreadsheet"></i> Descargar Excel
+            </button>
+          </div>
+        </header>
+
+        <!-- Tabs -->
+        <nav class="ed-tabs" role="tablist">
+          <button type="button" class="ed-tab is-active" data-tab="dashboard" role="tab" aria-selected="true">
+            <i class="bi bi-bar-chart-line"></i> Resumen general
+          </button>
+          <button type="button" class="ed-tab" data-tab="registros" role="tab" aria-selected="false">
+            <i class="bi bi-list-ul"></i> Lista de registros
+          </button>
+        </nav>
+
+        <!-- Resumen general -->
+        <section class="ed-section is-active" id="panelDashboard" role="tabpanel">
+
+          <div class="ed-kpi-row">
+            <div class="ed-kpi">
+              <div class="ed-kpi__icon ed-kpi__icon--blue"><i class="bi bi-people-fill"></i></div>
+              <div class="ed-kpi__data">
+                <span class="ed-kpi__label">Alumnos registrados</span>
+                <strong class="ed-kpi__num" id="statTotalDocentes">0</strong>
+              </div>
+            </div>
+            <div class="ed-kpi">
+              <div class="ed-kpi__icon ed-kpi__icon--green"><i class="bi bi-graph-up-arrow"></i></div>
+              <div class="ed-kpi__data">
+                <span class="ed-kpi__label">Total de registros</span>
+                <strong class="ed-kpi__num" id="statPromedioGeneral">0.00</strong>
+              </div>
+            </div>
+            <div class="ed-kpi">
+              <div class="ed-kpi__icon ed-kpi__icon--purple"><i class="bi bi-journal-bookmark-fill"></i></div>
+              <div class="ed-kpi__data">
+                <span class="ed-kpi__label">Programas participantes</span>
+                <strong class="ed-kpi__num" id="statCarrerasEvaluadas">0</strong>
+              </div>
+            </div>
+            <div class="ed-kpi">
+              <div class="ed-kpi__icon ed-kpi__icon--orange"><i class="bi bi-activity"></i></div>
+              <div class="ed-kpi__data">
+                <span class="ed-kpi__label">Avance del semestre</span>
+                <strong class="ed-kpi__num ed-kpi__num--sm" id="statEstadoPeriodo">Sin iniciar</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="ed-grid-2">
+            <div class="ed-card">
+              <div class="ed-card__head">
+                <h2><i class="bi bi-bar-chart-fill"></i> Promedio por carrera</h2>
+              </div>
+              <div class="ed-card__body ed-chart-box">
+                <canvas id="chartCarreras"></canvas>
+              </div>
+            </div>
+            <div class="ed-card">
+              <div class="ed-card__head">
+                <h2><i class="bi bi-pie-chart-fill"></i> Situación de las evaluaciones</h2>
+              </div>
+              <div class="ed-card__body ed-chart-box">
+                <canvas id="chartEstados"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="ed-card">
+            <div class="ed-card__head">
+              <h2><i class="bi bi-grid-3x3-gap-fill"></i> Resumen por programa académico</h2>
+              <span class="ed-card__meta" id="statUltimaActualizacion">Última actualización: —</span>
+            </div>
+            <div class="ed-card__body ed-table-box">
+              <table class="ed-table" id="tablaResumen">
+                <thead>
+                  <tr>
+                    <th>Programa académico</th>
+                    <th>Evaluaciones</th>
+                    <th>Promedio</th>
+                    <th>Docentes</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyResumen"></tbody>
+                <tfoot id="tfootResumen"></tfoot>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lista de evaluaciones -->
+        <section class="ed-section" id="panelRegistros" role="tabpanel" hidden>
+
+          <div class="ed-card">
+            <div class="ed-card__head ed-card__head--split">
+              <div>
+                <h2><i class="bi bi-list-ul"></i> Registros del semestre</h2>
+                <p class="ed-card__desc">Consulte, modifique o elimine registros del semestre seleccionado.</p>
+              </div>
+            </div>
+
+            <div class="ed-filters">
+              <div class="ed-search">
+                <i class="bi bi-search"></i>
+                <input type="search" id="evalSearch" placeholder="Buscar…">
+              </div>
+              <div class="ed-filters__group">
+                <select id="evalFilterCarrera"><option value="">Todas las carreras</option></select>
+                <select id="evalFilterStatus">
+                  <option value="">Todas las situaciones</option>
+                  <option value="pendiente">Por realizar</option>
+                  <option value="completada">Finalizada</option>
+                  <option value="revisada">Revisada</option>
+                </select>
+                <select id="evalPageSize">
+                  <option value="10" selected>10 / pág.</option>
+                  <option value="25">25 / pág.</option>
+                  <option value="50">50 / pág.</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="ed-card__body ed-table-box">
+              <table class="ed-table" id="tablaTalleres">
+                <thead>
+                  <tr>
+                    <th data-sort="docente" class="is-sortable">Docente <i class="bi bi-arrow-down-up"></i></th>
+                    <th data-sort="programa" class="is-sortable">Carrera <i class="bi bi-arrow-down-up"></i></th>
+                    <th data-sort="calificacion" class="is-sortable">Calificación <i class="bi bi-arrow-down-up"></i></th>
+                    <th data-sort="estado" class="is-sortable">Situación <i class="bi bi-arrow-down-up"></i></th>
+                    <th data-sort="fecha" class="is-sortable">Fecha <i class="bi bi-arrow-down-up"></i></th>
+                    <th class="ed-col-actions">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+
+            <div class="ed-pager">
+              <span id="evalPaginationInfo">Mostrando 0 de 0</span>
+              <div class="ed-pager__btns">
+                <button type="button" class="ed-pager__btn" id="evalPrevPage" disabled><i class="bi bi-chevron-left"></i></button>
+                <span id="evalPageIndicator">1 / 1</span>
+                <button type="button" class="ed-pager__btn" id="evalNextPage" disabled><i class="bi bi-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="ed-footer-actions">
+            <button type="button" class="ed-btn ed-btn--ghost" id="btnCancelar">
+              <i class="bi bi-arrow-counterclockwise"></i> Restaurar datos
+            </button>
+          </div>
+        </section>
+
+      </div><!-- /.ed-wrap -->
+    </main>
+  </div><!-- /.ed-body -->
+
+  <!-- Modal -->
+  <div class="ed-modal-bg" id="modalOverlay" hidden>
+    <div class="ed-modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+      <div class="ed-modal__head">
+        <h2 id="modalTitle"><i class="bi bi-plus-circle"></i> Nuevo registro</h2>
+        <button type="button" class="ed-modal__x" id="modalClose" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <form id="formEvaluacion" class="ed-modal__form" novalidate>
+        <input type="hidden" id="evalId">
+        <div class="ed-modal__body">
+          <div class="ed-form-row"></div>
+        </div>
+        <div class="ed-modal__foot">
+          <button type="button" class="ed-btn ed-btn--ghost" id="modalCancel">Cancelar</button>
+          <button type="submit" class="ed-btn ed-btn--primary" id="modalSave"><i class="bi bi-check-lg"></i> Guardar registro</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="ed-toast" id="evalToast" role="status" aria-live="polite"></div>
+
+  <footer class="ed-site-footer">
+    <p>© Copyright 2025 TESJo — Todos los Derechos Reservados</p>
+    <img src="/prueba/prueba/MENU/images/pagg.png" alt="Logo TESJo">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="/prueba/prueba/assets/js/desacad-nav.js?v=1"></script>
+  <script src="alumnos-eventos.config.js?v=1"></script>
+    <script src="/prueba/prueba/assets/sicei-module/sicei-default-data.js?v=1"></script>
+  <script src="/prueba/prueba/assets/js/desacad-module-runtime.js?v=2"></script>
+  <script src="/prueba/prueba/assets/js/gemini-ai.js?v=3"></script>
+</body>
+
+</html>

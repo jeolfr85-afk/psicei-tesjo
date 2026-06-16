@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirección Académica</title>
+  <link rel="stylesheet" href="PrimerEtapa.css">
+  <link rel="stylesheet" href="/prueba/prueba/assets/css/global.css" />
+  <link rel="stylesheet" href="/prueba/prueba/assets/css/psicei-theme.css" />
+</head>
+<body>
+  <div class="left-panel">
+    <p>TESJo Delfin Externo</p>
+    <ion-icon name="exit-outline"></ion-icon>
+  </div>
+
+  <div class="periodo-btn no-click" id="periodoTexto"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="http://localhost/prueba/prueba/MENU/Direccion_General/pprincipal.html">Inicio</a></li>
+        <li><a href="/prueba/prueba/MENU/Direccion_Academica/133DeptoInvCienTec/133DeptoInvCienTec.html">Departamento de Investigación en Ciencia y Tecnología</a></li>
+        <li><a href="#" class="sub-item" onclick="mostrarPeriodo()">TESJo Delfin</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <button id="toggleSidebar" class="sidebar-toggle">⯈</button>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <div class="top-bar">
+      <img src="/prueba/prueba/MENU/images/enkabezado.png" alt="Encabezado" class="escudo">
+    </div>
+
+    <h2 class="titulo-periodo">Tecnológico de Estudios Superiores de Jocotitlán</h2>
+    <h2 class="titulo-periodo">Programa Interinstitucional para el Fortalecimiento de la Investigación y el Posgrado del Pacífico</h2>
+    <h2 class="titulo-periodo">Especificar edición de verano (número romano) y periodo de la estancia</h2>
+    <h2 class="titulo-periodo">ESTUDIANTES QUE REALIZAN ESTANCIAS INTERNAS DESARROLLADAS EN EL TESJo</h2>
+
+<!-- Contenedor de tablas resumen -->
+
+    <!-- Tabla Principal -->
+    <div class="scroll-table">
+      <table id="tablaTalleres">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <div style="text-align:center; margin:10px 0;">
+      <button id="btnAgregarFila" class="submit-btn">Agregar Fila</button>
+    </div>
+<div class="tablas-resumen">
+
+  <!-- Tabla Sexo -->
+  <div class="tabla-wrapper">
+    <h3>Sexo Participantes</h3>
+    <table id="tablaSexo">
+      <thead>
+        <tr><th>Sexo</th><th>Cantidad</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hombres</td><td id="sexoHombres"></td></tr>
+        <tr><td>Mujeres</td><td id="sexoMujeres"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla Modalidad -->
+  <div class="tabla-wrapper">
+    <h3>Modalidad</h3>
+    <table id="tablaModalidad">
+      <thead>
+        <tr><th>Modalidad</th><th>Hombres</th><th>Mujeres</th><th>Total</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Presencial</td><td></td><td></td><td></td></tr>
+        <tr><td>Virtual</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla Lugar -->
+  <div class="tabla-wrapper">
+    <h3>Lugar de procedencia del estudiante</h3>
+    <table id="tablaLugar">
+      <thead>
+        <tr><th>Estancia</th><th>Hombres</th><th>Mujeres</th><th>Total</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nacional</td><td></td><td></td><td></td></tr>
+        <tr><td>Internacional</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla Detalle -->
+  <div class="tabla-wrapper">
+    <h3>Detalle de estados estancias</h3>
+    <table id="tablaDetalle">
+      <thead>
+        <tr>
+          <th>Nacional</th><th>Total</th><th>%</th>
+          <th>Internacional</th><th>Total</th><th>%</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Tabla Personal -->
+  <div class="tabla-wrapper">
+    <h3>Listado del personal responsable</h3>
+    <table id="tablaPersonal">
+      <thead>
+        <tr>
+          <th>Nombre del personal</th>
+          <th>Categoría</th>
+          <th>Total de Estudiantes a su cargo</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</div>
+
+
+    <!-- Botones -->
+    <div class="form-group-buttons">
+      <button type="button" id="btnGuardarBD" class="submit-btn">Guardar Cambios</button>
+      <button type="button" id="btnGuardarPDF" class="submit-btn">Descargar PDF</button>
+      <button type="button" id="btnGuardarExcel" class="submit-btn">Descargar Excel</button>
+      <button type="button" id="btnCancelar" class="submit-btn">Cancelar</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© Copyright 2025 TesJo - Todos los Derechos Reservados</p>
+    <img src="/prueba/prueba/MENU/images/pagg.png" alt="Logo pie de página">
+  </div>
+
+  <!-- Librerías externas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script src="PrimerEtapa.js"></script>
+<script src="/prueba/prueba/assets/js/gemini-ai.js"></script>
+  <script src="/prueba/prueba/assets/js/psicei-ui.js"></script>
+</body>
+</html>
+

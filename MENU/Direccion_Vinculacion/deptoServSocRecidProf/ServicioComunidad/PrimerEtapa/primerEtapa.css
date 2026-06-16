@@ -1,0 +1,572 @@
+/* Fuente Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos globales */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #B0B0B0);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Barra superior fija */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #00264D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.sidebar {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    background-color: #00264D;
+    color: white;
+    width: 200px;
+    padding: 20px;
+    height: auto;
+    border-radius: 0 10px 10px 0;
+    z-index: 1000;
+    margin-top: 60px;
+}
+
+/* Elementos de la lista */
+.sidebar ul li {
+    position: relative;
+    margin-bottom: 1.2rem;
+    padding-left: 20px;
+}
+
+/* Viñetas personalizadas */
+.sidebar ul li::before {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-size: 11px;
+}
+
+/* Enlaces del sidebar */
+.sidebar ul li a {
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+/* Hover */
+.sidebar ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Botones para el container */
+.periodo-btn {
+    background-color: #004080;
+    height: auto;
+    width: 25px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.periodo-btn:hover {
+    background-color: #0066cc;
+}
+
+/* Logo lateral flotante */
+.logo {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 160px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Imagen dentro del logo */
+.escudo {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    max-width: 900px;      /* ancho máximo menor */
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    align-self: center;
+    font-size: 10px;
+    margin-left: auto;     /* centrado horizontal */
+    margin-right: auto;    /* centrado horizontal */
+}
+
+.left-panel {
+    width: 100%;
+    background-color: #00264D;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    position: absolute;
+    /* o float: left; */
+    left: 0;
+    top: 83px;
+    /* Ajuste hecho aquí para subir el panel */
+    /* si tienes una barra fija */
+}
+
+.left-panel h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.left-panel p {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+/* Panel derecho (formulario) */
+.right-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formularios */
+form {
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #BCBBBA;
+}
+
+/* Enlaces */
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    text-decoration: none;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #00264D;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 16px;
+    border-top: 2px solid #ffffff44;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botones */
+.form-group-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #00264D;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    max-width: 500px;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+    color: #00264D;
+    border: 2px solid #00264D;
+}
+
+/* Botón del primer periodo */
+.periodo-btn.no-click {
+    pointer-events: none;
+    cursor: default;
+    opacity: 1;
+    margin-top: 220px;
+    background-color: #004080;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+    /* Espacio de 20px debajo */
+}
+
+.no-click:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+/* Botón del segundo periodo */
+.periodo-btn {
+    margin-top: 20px;
+    /* Ajuste de margen para el segundo botón */
+    background-color: #004080;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.periodo-btn:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+/* para ver lo del combobox */
+.year-dropdown {
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    margin-left: 10px;
+    width: 150px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Botones */
+.button {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    flex: 1;
+    text-align: center;
+    background-color: #00264D;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    max-width: 500px;
+}
+
+
+.desplegable {
+    display: none;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px;
+    width: fit-content;
+}
+
+.desplegable ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.desplegable li {
+    margin: 6px 0;
+}
+
+.desplegable a {
+    text-decoration: none;
+    color: #003366;
+}
+
+.desplegable a:hover {
+    text-decoration: underline;
+}
+
+
+.desplegable.activo {
+    display: block;
+}
+
+#toggleButton {
+    margin-top: 20px;
+
+    background-color: #004080;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.scroll-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    /* o un ancho fijo como 1200px */
+    border: 1px solid #ccc;
+    /* opcional */
+}
+
+
+/* Estilos del botón de colapso */
+.sidebar-toggle {
+    position: absolute;
+    top: 0px;
+    left: 190px;
+    background-color: #00264D;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    z-index: 2000;
+    transition: left 0.3s ease;
+}
+
+/* Sidebar colapsado */
+.sidebar.collapsed {
+    width: 0;
+    padding: 20px 0;
+    overflow: hidden;
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+/* Mover el botón junto al borde cuando sidebar está colapsado */
+.sidebar.collapsed+.sidebar-toggle {
+    left: 0;
+}
+
+
+/*color a los apartados de la tabla*/
+/* Solo aplica a los <td> de datos, NO a encabezados <th> */
+tbody td:nth-child(n):nth-last-child(-n+3):not(.resumen-celda) {
+    background-color: #dceeff !important;
+    /* Azul muy bajo */
+}
+
+
+/* Alternativa más específica para los td de INSCRITOS TOTAL */
+td:not(.resumen-celda):nth-last-child(-n+3) {
+    background-color: #dceeff;
+}
+
+/* Color azul muy claro para los encabezados de resumen */
+td.programa.resumen {
+    background-color: #b3e5fc;
+    /* Azul pastel */
+    font-weight: bold;
+}
+
+/* Color diferenciado para los SEXO dentro de los resúmenes */
+td.sexo.resumen {
+    background-color: #e0f7fa;
+    font-weight: bold;
+}
+
+/* Color para resumen-celda (celdas de resumen de totales) */
+td.resumen-celda {
+    background-color: #f1faff;
+    font-weight: bold;
+}
+
+/* Color para "HOMBRE" y "MUJER" en filas normales */
+td.fijo2 {
+    background-color: #e3f2fd;
+    font-weight: bold;
+}
+
+/* Fijo del programa académico para diferenciar columnas fijas */
+td.fijo {
+    background-color: #f0f8ff;
+    font-weight: bold;
+}
+
+/*tamanio de los componentes del  contenedor */
+.container table td {
+    font-size: 12px;
+}
+
+.container table th {
+    font-size: 14px;
+    font-weight: bold;
+}
+.periodo-btn {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin: 10px auto;
+  width: fit-content;
+}
+#tablaTalleres {
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Encabezado */
+#tablaTalleres thead th {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* Celdas */
+#tablaTalleres tbody td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: white !important;
+  color: #000;
+}
+
+/* Inputs */
+#tablaTalleres input[type="number"] {
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Fila de totales */
+#tablaTalleres .total-row th,
+#tablaTalleres .total-row td {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+}

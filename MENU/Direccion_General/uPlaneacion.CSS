@@ -1,0 +1,104 @@
+/* Importar fuente Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos globales */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #BCBBBA, #777779);
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* Barra superior con escudo */
+.top-bar {
+    width: 100%;
+    background-color: #00264D;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.escudo {
+    width: 102%;
+    height: auto;
+    position: float;
+}
+
+/* Sidebar */
+.sidebar {
+    margin-top: 117px;
+    /* Espacio debajo de la top-bar */
+    position: fixed;
+    top: 180px;
+    /* Ajusta este valor para mover más abajo el sidebar */
+    left: 0;
+    width: 250px;
+    /* Asegura que el sidebar tenga un tamaño adecuado */
+    height: calc(100vh - 180px);
+    /* Ajusta la altura para cubrir toda la pantalla */
+    background-color: #00264D;
+    padding-top: 20px;
+    z-index: 999;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 3px;
+    /* Reduce el espacio entre los elementos de la lista */
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: solid;
+    display: flex;
+    justify-content: center;
+    padding: 2px 10px;
+    /* Reduce el padding de los botones */
+    border-radius: 5px;
+    /* Redondea ligeramente los bordes */
+    margin: 5px 0;
+    /* Reduce el margen entre los botones */
+    background-color: #004099;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Contenido principal */
+.content {
+    margin-left: 250px;
+    padding-top: 130px;
+    justify-content: center;
+    padding: 2rem;
+    color: #333;
+}
+
+/* Título de ejemplo */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 10px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecomunicaciones</title>
+  <link rel="stylesheet" href="/prueba/prueba/assets/css/global.css">
+  <link rel="stylesheet" href="PrimerEtapa.css">
+  <link rel="stylesheet" href="/prueba/prueba/assets/css/psicei-theme.css" />
+</head>
+
+<body>
+
+  <div class="left-panel">
+    <p>Infraestructura Educación Especial </p>
+    <ion-icon name="exit-outline"></ion-icon>
+  </div>
+
+  <div class="periodo-btn no-click" id="periodoTexto"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="http://localhost/prueba/prueba/MENU/Direccion_General/pprincipal.html">Inicio</a></li>
+        <li><a href="/prueba/prueba/MENU/Direccion_Academica/132DeptoCenComp/132DeptoCenComp.html">Infraestructura Educación Especial</a></li>
+        <li><a href="#" class="sub-item" onclick="mostrarPeriodo()">Consultas</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <button id="toggleSidebar" class="sidebar-toggle">⯈</button>
+
+  <div class="container">
+
+    <div class="top-bar">
+      <img src="/prueba/prueba/MENU/images/enkabezado.png" alt="Encabezado" class="escudo">
+    </div>
+
+    <!-- Tabla -->
+    <div class="scroll-table">
+      <table id="tablaTalleres">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Botones -->
+    <div class="form-group-buttons"> 
+      <button type="button" id="btnGuardarPDF" class="submit-btn">Descargar PDF</button>
+      <button type="button" id="btnGuardarExcel" class="submit-btn">Descargar Excel</button>
+      <button type="button" id="btnCancelar" class="submit-btn">Cancelar</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© Copyright 2025 TesJo - Todos los Derechos Reservados</p>
+    <img src="/prueba/prueba/MENU/images/pagg.png" alt="Logo pie de página">
+  </div>
+
+  <!-- Librerías -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="PrimerEtapa.js"></script>
+  <script src="/prueba/prueba/assets/js/gemini-ai.js"></script>
+  <script src="/prueba/prueba/assets/js/psicei-ui.js"></script>
+</body>
+</html>
