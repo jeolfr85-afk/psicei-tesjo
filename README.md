@@ -77,10 +77,10 @@ PSICEI (Programa para la Sistematización y Consolidación de la Estadística In
 
 | Nombre | Matrícula | Rol |
 |--------|-----------|-----|
-| (Nombre completo) | (Matrícula) | Líder / Backend |
-| (Nombre completo) | (Matrícula) | Frontend |
-| (Nombre completo) | (Matrícula) | Base de datos |
-| (Nombre completo) | (Matrícula) | Documentación |
+| (Carlos Joel Francisco Antonio) | (2021150480347) | Líder / Backend  |
+| (Jazmin Sanchez Becerril) | (2022150481035) |  Documentación|
+| (Andrea Lizeth Ramirez Martinez) | (2022150480934) | Frontend |
+| (Mara Salmai Gonzalez Morales) | (2022150480473) | Base de datos |
 
 ## Variables de entorno mínimas
 
