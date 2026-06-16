@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f2efef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.top-bar {
+    width: 100%;
+    background-color: #00264D;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.escudo {
+    width: min(1100px, 100%);
+    max-height: 72px;
+    object-fit: contain;
+}
+
+.container {
+    width: min(470px, 94vw);
+    margin-top: 34px;
+    margin-bottom: 34px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.left-panel {
+    display: none;
+}
+
+.logo {
+    display: none;
+}
+
+.right-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 26px 24px;
+}
+
+form {
+    width: 100%;
+    max-width: 370px;
+}
+
+.input-group {
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #2b2b2b;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+}
+
+.input-group input:focus {
+    border-color: #1e67f1;
+    box-shadow: 0 0 0 3px rgba(30, 103, 241, 0.15);
+}
+
+.g-recaptcha {
+    margin: 12px 0 14px;
+    transform-origin: left top;
+    transform: scale(0.93);
+}
+
+button {
+    width: 100%;
+    padding: 11px;
+    background: #1e67f1;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #1552c5;
+}
+
+form p {
+    margin-top: 11px;
+    line-height: 1.35;
+    font-size: 13px;
+    text-align: center;
+    color: #444;
+}
+
+form a {
+    color: #ff6b1b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    width: 100%;
+    background-color: #00264D;
+    color: white;
+    text-align: center;
+    padding: 14px 10px;
+    font-size: 13px;
+    margin-top: auto;
+}
+
+.footer img {
+    margin-top: 6px;
+    width: auto;
+    max-width: 260px;
+    max-height: 38px;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding-top: 96px;
+    }
+
+    .g-recaptcha {
+        transform: scale(0.86);
+    }
+}
