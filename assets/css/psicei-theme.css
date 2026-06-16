@@ -1,0 +1,89 @@
+/* PSICEI Theme (Dashboard look) */
+:root{
+  --ps-bg: #f4f6fb;
+  --ps-card: #ffffff;
+  --ps-border: #e6eaf2;
+  --ps-text: #0f172a;
+  --ps-muted: #64748b;
+  --ps-primary: #0b2f6a;
+  --ps-primary2: #1d47A9;
+  --ps-accent: #22c55e;
+  --ps-danger: #ef4444;
+  --ps-warning: #f59e0b;
+  --ps-radius: 14px;
+  --ps-shadow: 0 10px 30px rgba(2,6,23,.10);
+}
+
+body{
+  background: var(--ps-bg);
+  color: var(--ps-text);
+}
+
+/* Shared layout */
+.ps-wrap{max-width:1200px;margin:110px auto 40px;padding:0 16px;}
+.ps-hero{
+  background: linear-gradient(135deg, var(--ps-primary), var(--ps-primary2));
+  color:#fff;border-radius:var(--ps-radius);
+  padding:18px 18px; box-shadow: var(--ps-shadow);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+.ps-hero h1,.ps-hero h2{margin:0;font-weight:900;letter-spacing:.2px}
+.ps-hero .ps-sub{opacity:.92}
+.ps-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+.ps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+.ps-card{
+  background:var(--ps-card);
+  border:1px solid var(--ps-border);
+  border-radius:var(--ps-radius);
+  box-shadow: 0 6px 22px rgba(2,6,23,.06);
+  padding:16px;
+}
+.ps-card h3{margin:0 0 10px 0;color:var(--ps-primary);font-weight:900}
+.ps-muted{color:var(--ps-muted)}
+
+.ps-kpi{display:flex;gap:12px;align-items:center}
+.ps-kpi .ps-num{font-size:1.9rem;font-weight:1000;color:var(--ps-primary)}
+.ps-kpi .ps-lbl{font-weight:800}
+
+/* Buttons */
+.ps-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:12px;
+  font-weight:900;border:1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.12);
+  color:#fff;text-decoration:none;
+  transition: transform .15s ease, background .2s ease;
+}
+.ps-btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.20); color:#fff;}
+.ps-btn.ps-solid{
+  border:1px solid var(--ps-border);
+  background:#fff;color:var(--ps-primary);
+}
+.ps-btn.ps-solid:hover{background:#f8fbff;color:var(--ps-primary2)}
+.ps-btn.ps-danger{background: rgba(239,68,68,.16); color:#fff; border-color: rgba(239,68,68,.35)}
+
+/* Tables */
+.ps-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--ps-border)}
+.ps-table th{
+  background: #0b2f6a;
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  font-size:.78rem;
+  padding:12px 12px;
+}
+.ps-table td{padding:10px 12px;border-bottom:1px solid #eef2f7;font-size:.92rem;vertical-align:top}
+.ps-table tr:hover td{background:#f7faff}
+.ps-pre{white-space:pre-wrap;max-height:160px;overflow:auto;background:#0b1220;color:#dbeafe;padding:10px;border-radius:12px;border:1px solid rgba(148,163,184,.25)}
+.ps-scroll{overflow:auto;border-radius:12px}
+
+/* Forms */
+.ps-field{display:flex;flex-direction:column;gap:6px;min-width:220px}
+.ps-field label{font-weight:800;color:#334155;font-size:.9rem}
+.ps-field input,.ps-field select{
+  padding:11px 12px;border-radius:12px;border:1px solid var(--ps-border);
+  background:#fff;outline:none;
+}
+.ps-field input:focus,.ps-field select:focus{border-color:#93c5fd;box-shadow:0 0 0 3px rgba(59,130,246,.12)}
+

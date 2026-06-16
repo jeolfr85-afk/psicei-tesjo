@@ -1,0 +1,119 @@
+/**
+ * Temas visuales SICEI — personalidad por área funcional
+ * Se aplican con data-theme en body.ed-app
+ */
+
+.ed-app[data-theme="academico"] {
+  --c-primary: #00264D;
+  --c-primary-2: #1d47A9;
+  --c-accent: #0066cc;
+}
+.ed-app[data-theme="academico"] .ed-topbar__brand i { color: #93c5fd; }
+
+.ed-app[data-theme="computo"] {
+  --c-primary: #0c1929;
+  --c-primary-2: #0ea5e9;
+  --c-accent: #06b6d4;
+  --c-bg: #eef6fb;
+}
+.ed-app[data-theme="computo"] .ed-topbar {
+  background: linear-gradient(135deg, #0c1929 0%, #0e3d5c 100%);
+}
+.ed-app[data-theme="computo"] .ed-aside {
+  background: linear-gradient(180deg, #0c1929 0%, #0f2744 100%);
+}
+.ed-app[data-theme="computo"] .ed-kpi__icon--blue { background: #e0f2fe; color: #0284c7; }
+.ed-app[data-theme="computo"] .ed-topbar__brand i { color: #22d3ee; }
+
+.ed-app[data-theme="investigacion"] {
+  --c-primary: #1e1b4b;
+  --c-primary-2: #6366f1;
+  --c-accent: #8b5cf6;
+  --c-bg: #f5f3ff;
+}
+.ed-app[data-theme="investigacion"] .ed-topbar {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+.ed-app[data-theme="investigacion"] .ed-aside {
+  background: linear-gradient(180deg, #1e1b4b 0%, #3730a3 100%);
+}
+.ed-app[data-theme="investigacion"] .ed-kpi__icon--purple { background: #ede9fe; color: #7c3aed; }
+
+.ed-app[data-theme="deportes"] {
+  --c-primary: #14532d;
+  --c-primary-2: #16a34a;
+  --c-accent: #22c55e;
+  --c-bg: #f0fdf4;
+}
+.ed-app[data-theme="deportes"] .ed-topbar {
+  background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+}
+.ed-app[data-theme="deportes"] .ed-aside {
+  background: linear-gradient(180deg, #14532d 0%, #15803d 100%);
+}
+.ed-app[data-theme="deportes"] .ed-kpi__icon--green { background: #dcfce7; color: #15803d; }
+
+.ed-app[data-theme="cultura"] {
+  --c-primary: #7c2d12;
+  --c-primary-2: #c2410c;
+  --c-accent: #ea580c;
+  --c-bg: #fff7ed;
+}
+.ed-app[data-theme="cultura"] .ed-topbar {
+  background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%);
+}
+.ed-app[data-theme="cultura"] .ed-aside {
+  background: linear-gradient(180deg, #7c2d12 0%, #c2410c 100%);
+}
+.ed-app[data-theme="cultura"] .ed-kpi__icon--orange { background: #ffedd5; color: #c2410c; }
+
+.ed-app[data-theme="servicio"] {
+  --c-primary: #1e3a5f;
+  --c-primary-2: #2563eb;
+  --c-accent: #3b82f6;
+  --c-bg: #f0f4f8;
+}
+.ed-app[data-theme="servicio"] .ed-topbar {
+  background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+}
+.ed-app[data-theme="servicio"] .ed-aside {
+  background: linear-gradient(180deg, #1e3a5f 0%, #1d4ed8 100%);
+}
+
+.ed-app[data-theme="educacion"] {
+  --c-primary: #134e4a;
+  --c-primary-2: #0d9488;
+  --c-accent: #14b8a6;
+  --c-bg: #f0fdfa;
+}
+.ed-app[data-theme="educacion"] .ed-topbar {
+  background: linear-gradient(135deg, #134e4a 0%, #0f766e 100%);
+}
+.ed-app[data-theme="educacion"] .ed-aside {
+  background: linear-gradient(180deg, #134e4a 0%, #0d9488 100%);
+}
+
+.ed-app[data-theme="difusion"] {
+  --c-primary: #581c87;
+  --c-primary-2: #9333ea;
+  --c-accent: #a855f7;
+  --c-bg: #faf5ff;
+}
+.ed-app[data-theme="difusion"] .ed-topbar {
+  background: linear-gradient(135deg, #581c87 0%, #7e22ce 100%);
+}
+.ed-app[data-theme="difusion"] .ed-aside {
+  background: linear-gradient(180deg, #581c87 0%, #9333ea 100%);
+}
+
+/* Animaciones suaves globales */
+.ed-card, .ed-kpi, .ed-btn, .ed-aside__link, .ed-tab {
+  transition: transform .18s ease, box-shadow .18s ease, background .15s ease;
+}
+.ed-kpi:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,38,77,.12);
+}
+.ed-card:hover {
+  box-shadow: 0 4px 20px rgba(0,38,77,.1);
+}

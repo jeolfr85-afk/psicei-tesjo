@@ -1,0 +1,334 @@
+/* PSICEI — Identidades visuales por módulo */
+
+.module-theme {
+  --mt-primary: #0b2f6a;
+  --mt-secondary: #1d47a9;
+  --mt-accent: #3b82f6;
+  --mt-surface: #ffffff;
+  --mt-muted: #64748b;
+  --mt-gradient: linear-gradient(135deg, #00264d 0%, #1d47a9 100%);
+  --mt-card-hover: #eff6ff;
+  --mt-pattern: none;
+}
+
+.module-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--mt-gradient);
+  color: #fff;
+  border-radius: 18px;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 16px 40px rgba(0, 38, 77, 0.22);
+  animation: portalFadeUp 0.45s ease forwards;
+}
+
+.module-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--mt-pattern);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.module-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.module-hero-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+}
+
+.module-hero-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+.module-hero h1 {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.module-hero .module-lead {
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.6;
+  opacity: 0.94;
+  font-size: 1rem;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.module-card {
+  background: var(--mt-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  text-decoration: none;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 160px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  animation: portalFadeUp 0.5s ease forwards;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+  border-color: var(--mt-accent);
+  background: var(--mt-card-hover);
+}
+
+.module-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(11, 47, 106, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.module-card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--mt-primary);
+}
+
+.module-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--mt-primary);
+  font-weight: 800;
+}
+
+.module-card p {
+  margin: 0;
+  color: var(--mt-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.module-card-arrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--mt-secondary);
+}
+
+.module-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.module-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #dbeafe;
+  color: var(--mt-primary);
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.module-action-btn:hover {
+  background: #eff6ff;
+  transform: translateY(-1px);
+}
+
+.module-info-panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  margin-top: 8px;
+}
+
+.module-info-panel h3 {
+  margin: 0 0 8px;
+  color: var(--mt-primary);
+}
+
+.module-info-panel p {
+  margin: 0;
+  color: var(--mt-muted);
+  line-height: 1.55;
+}
+
+/* —— Biblioteca —— */
+.theme-library {
+  --mt-primary: #1e3a5f;
+  --mt-secondary: #2c5282;
+  --mt-accent: #c9a227;
+  --mt-gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 55%, #4a6741 100%);
+  --mt-card-hover: #f7f5ef;
+  --mt-pattern: radial-gradient(circle at 20% 80%, rgba(201, 162, 39, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+}
+
+.theme-library .module-card-icon {
+  background: rgba(201, 162, 39, 0.12);
+}
+
+.theme-library .module-card-icon svg {
+  fill: #92680f;
+}
+
+/* —— Centro de Cómputo —— */
+.theme-tech {
+  --mt-primary: #0a1628;
+  --mt-secondary: #0ea5e9;
+  --mt-accent: #38bdf8;
+  --mt-gradient: linear-gradient(135deg, #0a1628 0%, #0b2f6a 50%, #0369a1 100%);
+  --mt-card-hover: #ecfeff;
+  --mt-pattern: linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.theme-tech .module-hero-icon {
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
+}
+
+.theme-tech .module-card-icon {
+  background: rgba(14, 165, 233, 0.12);
+}
+
+.theme-tech .module-card-icon svg {
+  fill: #0369a1;
+}
+
+/* —— Investigación —— */
+.theme-science {
+  --mt-primary: #134e4a;
+  --mt-secondary: #0f766e;
+  --mt-accent: #5eead4;
+  --mt-gradient: linear-gradient(135deg, #042f2e 0%, #134e4a 45%, #312e81 100%);
+  --mt-card-hover: #f0fdfa;
+  --mt-pattern: radial-gradient(circle at 70% 30%, rgba(94, 234, 212, 0.12) 0%, transparent 55%);
+}
+
+.theme-science .module-card-icon {
+  background: rgba(15, 118, 110, 0.12);
+}
+
+.theme-science .module-card-icon svg {
+  fill: #0f766e;
+}
+
+/* —— Desarrollo Académico —— */
+.theme-academic {
+  --mt-gradient: linear-gradient(135deg, #00264d 0%, #1d47a9 100%);
+  --mt-card-hover: #eff6ff;
+}
+
+/* —— Deportes —— */
+.theme-sports {
+  --mt-primary: #9a3412;
+  --mt-secondary: #ea580c;
+  --mt-accent: #fb923c;
+  --mt-gradient: linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #1d47a9 100%);
+  --mt-card-hover: #fff7ed;
+}
+
+.theme-sports .module-card-icon {
+  background: rgba(234, 88, 12, 0.12);
+}
+
+.theme-sports .module-card-icon svg {
+  fill: #c2410c;
+}
+
+/* —— Cultura —— */
+.theme-culture {
+  --mt-primary: #581c87;
+  --mt-secondary: #7e22ce;
+  --mt-accent: #c084fc;
+  --mt-gradient: linear-gradient(135deg, #3b0764 0%, #6b21a8 50%, #1d47a9 100%);
+  --mt-card-hover: #faf5ff;
+}
+
+.theme-culture .module-card-icon {
+  background: rgba(126, 34, 206, 0.12);
+}
+
+.theme-culture .module-card-icon svg {
+  fill: #7e22ce;
+}
+
+/* —— Administrativo / SSRP —— */
+.theme-admin-pro {
+  --mt-gradient: linear-gradient(135deg, #1e293b 0%, #0b2f6a 100%);
+  --mt-card-hover: #f8fafc;
+}
+
+/* —— Difusión / Comunicación —— */
+.theme-comms {
+  --mt-primary: #1e40af;
+  --mt-secondary: #2563eb;
+  --mt-accent: #60a5fa;
+  --mt-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #7c3aed 100%);
+  --mt-card-hover: #eff6ff;
+  --mt-pattern: radial-gradient(circle at 10% 50%, rgba(96, 165, 250, 0.15) 0%, transparent 45%);
+}
+
+.theme-comms .module-card-icon {
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.theme-comms .module-card-icon svg {
+  fill: #2563eb;
+}
+
+/* —— Extensión / Educación —— */
+.theme-extension {
+  --mt-gradient: linear-gradient(135deg, #0b2f6a 0%, #047857 100%);
+  --mt-card-hover: #ecfdf5;
+}
+
+@media (max-width: 640px) {
+  .module-hero {
+    padding: 24px 18px;
+  }
+
+  .module-hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
