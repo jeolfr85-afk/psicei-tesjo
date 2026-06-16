@@ -2,7 +2,7 @@
 
 Sistema web en PHP para registro, autenticación, captura de indicadores y consulta de estadísticas institucionales del TecNM — TESJo.
 
-**Producción:** [https://sistemaaministrativo.store/prueba/prueba](https://sistemaaministrativo.store/prueba/prueba)
+**Producción:** https://sistemaaministrativo.store/prueba/prueba/MENU/modulo_estadistico.php?module=Biblioteca
 
 ## Descripción del sistema
 
