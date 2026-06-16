@@ -1,0 +1,51 @@
+# Seguridad básica para despliegue en Apache
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Forzar HTTPS cuando se activa desde variable de entorno
+RewriteCond %{ENV:PSICEI_FORCE_HTTPS} =1
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Bloquear acceso directo a archivos sensibles
+RewriteRule ^(\.env|\.git|composer\.(json|lock)|README\.md) - [F,L,NC]
+
+# Proteger acceso directo a HTML del módulo MENU (incluye carpeta MENÚ en hosting)
+RewriteCond %{REQUEST_URI} ^/prueba/prueba/(MENU|MEN%C3%9A)/.*\.(html?|HTML?)$ [NC]
+RewriteCond %{REQUEST_URI} !/prueba/prueba/(MENU|MEN%C3%9A)/images/ [NC]
+RewriteCond %{REQUEST_URI} !/prueba/prueba/(MENU|MEN%C3%9A)/css/ [NC]
+RewriteCond %{REQUEST_URI} !/prueba/prueba/(MENU|MEN%C3%9A)/js/ [NC]
+RewriteRule ^ /prueba/prueba/LOGIN/html_guard.php [L,QSA]
+
+# Compatibilidad de rutas para despliegues con carpetas renombradas (español).
+# Solo aplica si existe la carpeta alternativa.
+RewriteCond %{DOCUMENT_ROOT}/prueba/prueba/ACCESO -d
+RewriteRule ^prueba/prueba/LOGIN/(.*)$ /prueba/prueba/ACCESO/$1 [L,NC]
+
+RewriteCond %{DOCUMENT_ROOT}/prueba/prueba/MENÚ -d
+RewriteRule ^prueba/prueba/MENU/(.*)$ /prueba/prueba/MEN%C3%9A/$1 [L,NC]
+
+RewriteCond %{DOCUMENT_ROOT}/prueba/prueba/activos -d
+RewriteRule ^prueba/prueba/assets/(.*)$ /prueba/prueba/activos/$1 [L,NC]
+
+RewriteCond %{DOCUMENT_ROOT}/prueba/prueba/herramientas -d
+RewriteRule ^prueba/prueba/tools/(.*)$ /prueba/prueba/herramientas/$1 [L,NC]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# HSTS solo en HTTPS
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# Evita descargar listado de directorios de módulos
+<FilesMatch "^(README\.md|\.env)$">
+    Require all denied
+</FilesMatch>
